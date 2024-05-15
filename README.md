@@ -32,26 +32,26 @@ We compare the our results with
 ![Alt text](results/results.png)
 
 <!-- results table start -->
-| Conv Layer                        | Activation or Basis Function   | Hidden Layers    |   Accuracy (%) | Parameters (B)   |   Throughput (image/s) |
-|:----------------------------------|:-------------|:-----------------|---------------:|:-----------------|-----------------------:|
-| nn.Conv2d                         | nn.relu      | [32,32]          |          65.75 | 13,162           |                    nan |
-| convkan (with efficientKANLinear) | Bspline      | [32,32]          |          68.55 | 69,332           |                    nan |
-| convkan (with FastKANLinear)      | RBF          | [32,32]          |          69.8  | 68,508           |                    nan |
-| kanconv (ours)                    | BSpline      | [32,32]          |         nan    | 65,076           |                    nan |
-| kanconv small (ours)              | BSpline      | [8,32]           |         nan    | 27,180           |                    nan |
-| kanconv tiny (ours)               | BSpline      | [8,16]           |         nan    | 14,156           |                    nan |
-| kanconv (ours)                    | Chebyshev    | [32,32]          |          63.09 | 65,076           |                    nan |
-| kanconv small (ours)              | Chebyshev    | [8,32]           |          59.33 | 27,180           |                    nan |
-| kanconv tiny (ours)               | Chebyshev    | [8,16]           |          56.79 | 14,156           |                    nan |
-| kanconv (ours)                    | Fourier      | [32,32]          |          50.5  | 65,076           |                    nan |
-| kanconv small (ours)              | Fourier      | [8,32]           |          49.38 | 27,180           |                    nan |
-| kanconv tiny (ours)               | Fourier      | [8,16]           |          45.48 | 14,156           |                    nan |
-| kanconv (ours)                    | Poly         | [32,32]          |          62.93 | 65,076           |                    nan |
-| kanconv small (ours)              | Poly         | [8,32]           |          58.17 | 27,180           |                    nan |
-| kanconv tiny (ours)               | Poly         | [8,16]           |          57.48 | 14,156           |                    nan |
-| kanconv (ours)                    | RBF          | [32,32]          |          69.58 | 65,076           |                    nan |
-| kanconv small (ours)              | RBF          | [8,32]           |          65.81 | 27,180           |                    nan |
-| kanconv tiny (ours)               | RBF          | [8,16]           |          61.95 | 14,156           |                    nan |
+| Conv Layer                        | Activation / Basis Functions   | Hidden Layers    |   Accuracy (%) | Parameters (B)   |   Throughput (image/s) |
+|:----------------------------------|:-------------------------------|:-----------------|---------------:|:-----------------|-----------------------:|
+| nn.Conv2d                         | nn.relu                        | [32,32]          |          65.75 | 13,162           |                 221224 |
+| convkan (with efficientKANLinear) | Bspline                        | [32,32]          |          68.55 | 69,332           |                  51873 |
+| convkan (with FastKANLinear)      | RBF                            | [32,32]          |          69.8  | 68,508           |                  67265 |
+| kanconv (ours)                    | BSpline                        | [32,32]          |          68.13 | 65,076           |                   8260 |
+| kanconv small (ours)              | BSpline                        | [8,32]           |          61.89 | 27,180           |                   7988 |
+| kanconv tiny (ours)               | BSpline                        | [8,16]           |          60.06 | 14,156           |                   8126 |
+| kanconv (ours)                    | Chebyshev                      | [32,32]          |          63.09 | 65,076           |                  94824 |
+| kanconv small (ours)              | Chebyshev                      | [8,32]           |          59.33 | 27,180           |                  92144 |
+| kanconv tiny (ours)               | Chebyshev                      | [8,16]           |          56.79 | 14,156           |                 113881 |
+| kanconv (ours)                    | Fourier                        | [32,32]          |          50.5  | 65,076           |                  86398 |
+| kanconv small (ours)              | Fourier                        | [8,32]           |          49.38 | 27,180           |                  84884 |
+| kanconv tiny (ours)               | Fourier                        | [8,16]           |          45.48 | 14,156           |                 104428 |
+| kanconv (ours)                    | Poly                           | [32,32]          |          62.93 | 65,076           |                  98335 |
+| kanconv small (ours)              | Poly                           | [8,32]           |          58.17 | 27,180           |                  97254 |
+| kanconv tiny (ours)               | Poly                           | [8,16]           |          57.48 | 14,156           |                 127420 |
+| kanconv (ours)                    | RBF                            | [32,32]          |          69.58 | 65,076           |                 100182 |
+| kanconv small (ours)              | RBF                            | [8,32]           |          65.81 | 27,180           |                 103170 |
+| kanconv tiny (ours)               | RBF                            | [8,16]           |          61.95 | 14,156           |                 126534 |
 <!-- results table end -->
 
 ## Result Analysis
