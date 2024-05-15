@@ -23,7 +23,7 @@ def set_seed(seed: int):
     
 
 argparser = argparse.ArgumentParser()
-argparser.add_argument("--model", type=str, default="kanconv", choices=["kanconv_small", "kanconv", "mlp", "convkan_efficient", "convkan_fast"], help="model name")
+argparser.add_argument("--model", type=str, default="kanconv", choices=["kanconv_small", "kanconv_tiny", "kanconv", "mlp", "convkan_efficient", "convkan_fast"], help="model name")
 argparser.add_argument("--epochs", type=int, default=150, help="number of epochs")
 argparser.add_argument("--seed", type=int, default=44, help="random seed")
 argparser.add_argument("--lr", type=float, default=1e-2, help="learning rate")
@@ -50,6 +50,18 @@ if args.model == "kanconv_small":
         nn.AdaptiveAvgPool2d(1),
         nn.Flatten(),
     ).cuda()
+
+if args.model == "kanconv_tiny":
+    model = nn.Sequential(
+        FastKANConvLayer(3, 8, padding=1, kernel_size=3, stride=1, kan_type=args.kan_type),
+        BatchNorm2d(8),
+        FastKANConvLayer(8, 16, padding=1, kernel_size=3, stride=2, kan_type=args.kan_type),
+        BatchNorm2d(16),
+        FastKANConvLayer(16, 10, padding=1, kernel_size=3, stride=2, kan_type=args.kan_type),
+        nn.AdaptiveAvgPool2d(1),
+        nn.Flatten(),
+    ).cuda()
+    
 elif args.model == "kanconv":
     model = nn.Sequential(
         FastKANConvLayer(3, 32, padding=1, kernel_size=3, stride=1, kan_type=args.kan_type),
