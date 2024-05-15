@@ -2,7 +2,7 @@
 
 ## Overview
 
-The ConvKAN-Zoo repository offers implementations of Convolutional Kolmogorov-Arnold Networks (ConvKAN) with different basis functions. This project aims to extend and refine the ConvKAN framework by integrating various activation functions and providing comparative performance metrics.
+The KA-Conv repository offers implementations of Kolmogorov-Arnold Convolutional Networks (KA-Conv) with different basis functions. This project aims to extend and refine the ConvKAN framework by integrating various activation functions and providing comparative performance metrics.
 
 ## Implementation Details
 
