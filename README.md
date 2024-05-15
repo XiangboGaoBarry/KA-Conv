@@ -29,7 +29,8 @@ We compare the our results with
 - **EfficientKANLinear**: Implemented as per [EfficientKANLinear](https://github.com/Blealtan/efficient-kan)
 - **FastKANLinear**: Implemented as per [FastKANLinear](https://github.com/ZiyaoLi/fast-kan.git)
 
-![Alt text](results/results.png)
+![Alt text](results/results_throughput.png)
+![Alt text](results/results_para.png)
 
 <!-- results table start -->
 | Conv Layer                        | Activation or Basis Function   | Hidden Layers    |   Accuracy (%) | Parameters (B)   |   Throughput (image/s) |
