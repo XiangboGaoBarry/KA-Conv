@@ -1,4 +1,4 @@
-# ConvKAN-Zoo: Convolutional Kolmogorov-Arnold Networks with Various Basis Functions
+# KA-Conv: Kolmogorov-Arnold Convolutional Networks with Various Basis Functions
 
 ## Overview
 
