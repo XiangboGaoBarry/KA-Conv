@@ -2,8 +2,8 @@ import torch
 import torch.nn.functional as F
 import warnings
 
-from model_zoo.convkan.kanlinear import KANLinear
-from model_zoo.convkan.fastkan import FastKANLayer
+from kaconv.convkan.kanlinear import KANLinear
+from kaconv.convkan.fastkan import FastKANLayer
 
 
 class ConvKAN(torch.nn.Module):

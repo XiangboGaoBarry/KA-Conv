@@ -8,8 +8,8 @@ import numpy as np
 import argparse
 import time
 
-from model_zoo.convkan import ConvKAN
-from model_zoo.kaconv import FastKANConvLayer
+from kaconv.convkan import ConvKAN
+from kaconv.kaconv import FastKANConvLayer
 from torch.nn import Conv2d, BatchNorm2d
 
 def set_seed(seed: int):
@@ -52,7 +52,7 @@ if args.model == "kanconv_small":
         nn.Flatten(),
     ).cuda()
 
-if args.model == "kanconv_tiny":
+elif args.model == "kanconv_tiny":
     model = nn.Sequential(
         FastKANConvLayer(3, 8, padding=1, kernel_size=3, stride=1, kan_type=args.kan_type),
         BatchNorm2d(8),
@@ -136,8 +136,8 @@ transform_val = transforms.Compose([
 train_dataset = datasets.CIFAR10(root='./data', train=True, download=True, transform=transform_train)
 test_dataset = datasets.CIFAR10(root='./data', train=False, download=True, transform=transform_val)
 
-train_loader = torch.utils.data.DataLoader(train_dataset, batch_size=128, shuffle=True, num_workers=32)
-test_loader = torch.utils.data.DataLoader(test_dataset, batch_size=128, shuffle=False, num_workers=32)
+train_loader = torch.utils.data.DataLoader(train_dataset, batch_size=128, shuffle=True, num_workers=64)
+test_loader = torch.utils.data.DataLoader(test_dataset, batch_size=128, shuffle=False, num_workers=64)
 
 # Define the loss function and optimizer
 criterion = nn.CrossEntropyLoss()
@@ -188,4 +188,6 @@ for epoch in pbar:
             best_acc = acc
         throughput = 1 / time_taken * total
     scheduler.step()
+
+print(throughput)
     
