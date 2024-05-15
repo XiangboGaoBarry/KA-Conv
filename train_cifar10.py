@@ -8,7 +8,8 @@ import numpy as np
 import argparse
 import time
 
-from model_zoo.convkan import ConvKAN, FastKANConvLayer
+from model_zoo.convkan import ConvKAN
+from model_zoo.kaconv import FastKANConvLayer
 from torch.nn import Conv2d, BatchNorm2d
 
 def set_seed(seed: int):

@@ -1,10 +1,10 @@
-Conv Layer,Activation,"Hidden Layers ",Accuracy (%),Parameters (B),Throughput (image/s)
+Conv Layer,Activation / Basis Functions,"Hidden Layers ",Accuracy (%),Parameters (B),Throughput (image/s)
 nn.Conv2d,nn.relu,"[32,32]",65.75,"13,162",
 convkan (with efficientKANLinear),Bspline,"[32,32]",68.55,"69,332",
 convkan (with FastKANLinear),RBF,"[32,32]",69.80,"68,508",
-kanconv (ours),BSpline,"[32,32]",,"65,076",
-kanconv small (ours),BSpline,"[8,32]",,"27,180",
-kanconv tiny (ours),BSpline,"[8,16]",,"14,156",
+kanconv (ours),BSpline,"[32,32]",68.13,"65,076",
+kanconv small (ours),BSpline,"[8,32]",61.89,"27,180",
+kanconv tiny (ours),BSpline,"[8,16]",60.06,"14,156",
 kanconv (ours),Chebyshev,"[32,32]",63.09,"65,076",
 kanconv small (ours),Chebyshev,"[8,32]",59.33,"27,180",
 kanconv tiny (ours),Chebyshev,"[8,16]",56.79,"14,156",

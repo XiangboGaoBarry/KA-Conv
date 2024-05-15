@@ -4,16 +4,32 @@
 
 The KA-Conv repository offers implementations of Kolmogorov-Arnold Convolutional Networks (KA-Conv) with different basis functions. This project aims to extend and refine the ConvKAN framework by integrating various activation functions and providing comparative performance metrics.
 
-## Implementation Details
+## Installation
 
-Our repository includes the following variations of ConvKAN:
-- **EfficientKANLinear**: Implemented as per [EfficientKANLinear](https://github.com/Blealtan/efficient-kan)
-- **FastKANLinear**: Implemented as per [FastKANLinear](https://github.com/ZiyaoLi/fast-kan.git)
-- **Custom KANConv Layers**: Our own implementation, offering several basis functions including Polynomial, Chebyshev, Fourier, BSpline, and Radial Basis Function (RBF).
+### Use Pypi package
+
+```
+pip install kaconv
+pip install -r requirements.txt
+```
+
+### Build from source
+
+```
+git clone https://github.com/XiangboGaoBarry/KA-Conv.git
+python -m build
+pip install -r requirements.txt
+```
 
 ## Comparative Results
 
-The following table presents the comparative results of different ConvKAN implementations using various activation functions. Key metrics include accuracy, parameter count, and throughput.
+The following table presents the comparative results of different KA-Conv implementations using various activation functions. Key metrics include accuracy, parameter count, and throughput.
+
+We compare the our results with 
+- **EfficientKANLinear**: Implemented as per [EfficientKANLinear](https://github.com/Blealtan/efficient-kan)
+- **FastKANLinear**: Implemented as per [FastKANLinear](https://github.com/ZiyaoLi/fast-kan.git)
+
+![Alt text](results/results.png)
 
 <!-- results table start -->
 | Conv Layer                        | Activation or Basis Function   | Hidden Layers    |   Accuracy (%) | Parameters (B)   |   Throughput (image/s) |
