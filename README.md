@@ -1,22 +1,22 @@
-# ConvKAN-Zoo: Convolutional Kolmogorov-Arnold Networks with Various Activation Formulations
+# ConvKAN-Zoo: Convolutional Kolmogorov-Arnold Networks with Various Basis Functions
 
 ## Overview
 
-The ConvKAN-Zoo repository offers implementations of Convolutional Kolmogorov-Arnold Networks (ConvKAN) with different activation formulations. This project aims to extend and refine the ConvKAN framework by integrating various activation functions and providing comparative performance metrics.
+The ConvKAN-Zoo repository offers implementations of Convolutional Kolmogorov-Arnold Networks (ConvKAN) with different basis functions. This project aims to extend and refine the ConvKAN framework by integrating various activation functions and providing comparative performance metrics.
 
 ## Implementation Details
 
 Our repository includes the following variations of ConvKAN:
 - **EfficientKANLinear**: Implemented as per [EfficientKANLinear](https://github.com/Blealtan/efficient-kan)
 - **FastKANLinear**: Implemented as per [FastKANLinear](https://github.com/ZiyaoLi/fast-kan.git)
-- **Custom KANConv Layers**: Our own implementation, offering several activation functions including Polynomial, Chebyshev, Fourier, BSpline, and Radial Basis Function (RBF).
+- **Custom KANConv Layers**: Our own implementation, offering several basis functions including Polynomial, Chebyshev, Fourier, BSpline, and Radial Basis Function (RBF).
 
 ## Comparative Results
 
 The following table presents the comparative results of different ConvKAN implementations using various activation functions. Key metrics include accuracy, parameter count, and throughput.
 
 <!-- results table start -->
-| Conv Layer                        | Activation   | Hidden Layers    |   Accuracy (%) | Parameters (B)   |   Throughput (image/s) |
+| Conv Layer                        | Activation or Basis Function   | Hidden Layers    |   Accuracy (%) | Parameters (B)   |   Throughput (image/s) |
 |:----------------------------------|:-------------|:-----------------|---------------:|:-----------------|-----------------------:|
 | nn.Conv2d                         | nn.relu      | [32,32]          |          65.75 | 13,162           |                    nan |
 | convkan (with efficientKANLinear) | Bspline      | [32,32]          |          68.55 | 69,332           |                    nan |
