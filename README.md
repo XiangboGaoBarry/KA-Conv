@@ -38,32 +38,32 @@ We compare the our results with
 | nn.Conv2d                         | nn.relu                        | [32,32]          |          65.75 | 13,162           |                 221224 |
 | convkan (with efficientKANLinear) | Bspline                        | [32,32]          |          68.55 | 69,332           |                  51873 |
 | convkan (with FastKANLinear)      | RBF                            | [32,32]          |          69.8  | 68,508           |                  67265 |
-| kanconv (ours)                    | BSpline                        | [32,32]          |          68.13 | 65,076           |                   8260 |
-| kanconv small (ours)              | BSpline                        | [8,32]           |          61.89 | 27,180           |                   7988 |
-| kanconv tiny (ours)               | BSpline                        | [8,16]           |          60.06 | 14,156           |                   8126 |
-| kanconv (ours)                    | Chebyshev                      | [32,32]          |          63.09 | 65,076           |                  94824 |
-| kanconv small (ours)              | Chebyshev                      | [8,32]           |          59.33 | 27,180           |                  92144 |
-| kanconv tiny (ours)               | Chebyshev                      | [8,16]           |          56.79 | 14,156           |                 113881 |
-| kanconv (ours)                    | Fourier                        | [32,32]          |          50.5  | 65,076           |                  86398 |
-| kanconv small (ours)              | Fourier                        | [8,32]           |          49.38 | 27,180           |                  84884 |
-| kanconv tiny (ours)               | Fourier                        | [8,16]           |          45.48 | 14,156           |                 104428 |
-| kanconv (ours)                    | Poly                           | [32,32]          |          62.93 | 65,076           |                  98335 |
-| kanconv small (ours)              | Poly                           | [8,32]           |          58.17 | 27,180           |                  97254 |
-| kanconv tiny (ours)               | Poly                           | [8,16]           |          57.48 | 14,156           |                 127420 |
-| kanconv (ours)                    | RBF                            | [32,32]          |          69.58 | 65,076           |                 100182 |
-| kanconv small (ours)              | RBF                            | [8,32]           |          65.81 | 27,180           |                 103170 |
-| kanconv tiny (ours)               | RBF                            | [8,16]           |          61.95 | 14,156           |                 126534 |
+| ka-conv (ours)                    | BSpline                        | [32,32]          |          68.13 | 65,076           |                   8260 |
+| ka-conv small (ours)              | BSpline                        | [8,32]           |          61.89 | 27,180           |                   7988 |
+| ka-conv tiny (ours)               | BSpline                        | [8,16]           |          60.06 | 14,156           |                   8126 |
+| ka-conv (ours)                    | Chebyshev                      | [32,32]          |          63.09 | 65,076           |                  94824 |
+| ka-conv small (ours)              | Chebyshev                      | [8,32]           |          59.33 | 27,180           |                  92144 |
+| ka-conv tiny (ours)               | Chebyshev                      | [8,16]           |          56.79 | 14,156           |                 113881 |
+| ka-conv (ours)                    | Fourier                        | [32,32]          |          50.5  | 65,076           |                  86398 |
+| ka-conv small (ours)              | Fourier                        | [8,32]           |          49.38 | 27,180           |                  84884 |
+| ka-conv tiny (ours)               | Fourier                        | [8,16]           |          45.48 | 14,156           |                 104428 |
+| ka-conv (ours)                    | Poly                           | [32,32]          |          62.93 | 65,076           |                  98335 |
+| ka-conv small (ours)              | Poly                           | [8,32]           |          58.17 | 27,180           |                  97254 |
+| ka-conv tiny (ours)               | Poly                           | [8,16]           |          57.48 | 14,156           |                 127420 |
+| ka-conv (ours)                    | RBF                            | [32,32]          |          69.58 | 65,076           |                 100182 |
+| ka-conv small (ours)              | RBF                            | [8,32]           |          65.81 | 27,180           |                 103170 |
+| ka-conv tiny (ours)               | RBF                            | [8,16]           |          61.95 | 14,156           |                 126534 |
 <!-- results table end -->
 
 ## Result Analysis
 
 ### Performance
 
-Currently, with the same hidden layer setups, KANConv with RBF and BSpline activations outperform the original nn.Conv2d. However, KANConv also adds extra complexity, leading to more parameters and lower throughput. When reducing the number of parameters of the model to the same level as that of the model implemented with nn.Conv2d, the performance of the model implemented with KANConv is lower.
+Currently, with the same hidden layer setups, KA-Conv with RBF and BSpline activations outperform the original nn.Conv2d. However, KA-Conv also adds extra complexity, leading to more parameters and lower throughput. When reducing the number of parameters of the model to the same level as that of the model implemented with nn.Conv2d, the performance of the model implemented with KA-Conv is lower.
 
 ### Efficiency
 
-TODO
+KA-Conv has lower throughput than `nn.Conv` despite that our implementation has +93% acceleration over other implementations.
 
 ## Upcoming Release
 
